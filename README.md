@@ -41,6 +41,7 @@ Python的简单易用，方便后期更容易找到工程师开发和维护。�
 | question    | text              | 场景问题              | 普通字段          |
 | answers     | json              | 场景答案（JSON格式）  | 普通字段          |
 | metaData    | json              | 元数据（JSON格式）    | 普通字段          |
+| imageLink   | varchar(255)      | 图片链接              | 普通字段          |
 | videoLink   | varchar(255)      | 视频链接              | 普通字段          |
 | audioLink   | varchar(255)      | 音频链接              | 普通字段          |
 | createdAt   | datetime          | 创建时间              | 默认值、索引      |
@@ -53,6 +54,7 @@ Python的简单易用，方便后期更容易找到工程师开发和维护。�
   "question": "what is the things which make small things big?",
   "videoLink": "https://example.com/videos/magnification-explanation.mp4",
   "audioLink": "https://example.com/audios/question-audio.mp3",
+  "imageLink": "https://example.com/images/question-image.png",
   "answers": [
     {
       "answerID": "A-001",
