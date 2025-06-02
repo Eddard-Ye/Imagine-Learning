@@ -3,13 +3,14 @@
 这个技术文档提供一个针对学单词APP的后端设计。主要包含一个Scene(单词)的表结构设计，为前端提供一个第一步的Https的CRUD APIs。
 整体的设计考虑倾向于，简单，可持续开发，快速实现功能；性能以及可维护性等非功能性特性，会在前端和设计切入之后，按照各方需求持续重构。
 ## Use Case Analysis
+![image0](Resource/UserCase1.png)
 1. 我可以跟据ID读取到一个单词，然后通过API获得单词的视频，音频，提示语句，选项;
 2. 我可以批量分页地读出一批单词的信息；
 3. 我可以创建一个单词，并且上传它相应的资源和资源；
 4. 我可以通过单词的ID,更改一个已经存在的单词，包括他相关的资源和属性；
 5. 我可以跟据一批输入的单词ID, 删除数据库里对应的单词内容
 ## Architecture Design
-![image1](./architecture.png)
+![image1](Resource/architecture.png)
 ### Tech Stack Selction
 这个项目的后端语言建议选择python, 比起使用go语言去追求高并发下的资源优化，预期单词app的并发量并不会达到大型互联app的量级。
 Python的简单易用，方便后期更容易找到工程师开发和维护。如果目所能及地发现，并发量开始上来了，对于延迟的需求也提升来了。可以针对新的需求去做后端语言level的重构。
@@ -26,9 +27,9 @@ Python的简单易用，方便后期更容易找到工程师开发和维护。�
 
 ## Sequential Flow
 ### Admin 
-![image2](./SequentialMap_Admin.png)
+![image2](Resource/SequentialMap_Admin.png)
 ### User
-![image3](./SequentialMap_User.png)
+![image3](Resource/SequentialMap_User.png)
 ## DB Scheme Design
 这个把单词抽象为场景Scene, Scene和单词是一一对应的关系，也响应一下IL的听说读写/视频，音频，文字，语意结合的理念。
 ### 单词(Scene)表格式设计
